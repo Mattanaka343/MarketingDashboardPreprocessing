@@ -1,0 +1,877 @@
+term,engagement_score,acc,chan
+alignment,0.1388,buis,lin
+aplicar,0.2061,buis,lin
+build,0.2143,buis,lin
+building,0.2317,buis,lin
+business,0.2484,buis,lin
+carrera,0.182,buis,lin
+carrerainternacional,0.3625,buis,lin
+carrerainternacional trabajoremoto,0.2531,buis,lin
+companies,0.4444,buis,lin
+comunes,0.2047,buis,lin
+connect,0.2317,buis,lin
+conseguir,0.2027,buis,lin
+conseguir trabajo,0.2027,buis,lin
+costs,0.4077,buis,lin
+cultural,0.1388,buis,lin
+cultural alignment,0.1388,buis,lin
+cv,0.182,buis,lin
+cómo,0.285,buis,lin
+destacar,0.1463,buis,lin
+diaswexpand,0.3822,buis,lin
+empathy,0.1554,buis,lin
+empresa,0.2424,buis,lin
+empresa extranjera,0.2027,buis,lin
+entrevistas,0.1914,buis,lin
+entrevistas inglés,0.1914,buis,lin
+errores,0.2047,buis,lin
+errores comunes,0.2047,buis,lin
+estrategia,0.1854,buis,lin
+every,0.7035,buis,lin
+execution,0.6263,buis,lin
+explore,0.4578,buis,lin
+extranjera,0.2027,buis,lin
+fast,0.2143,buis,lin
+faster,0.4661,buis,lin
+global,0.3877,buis,lin
+grow,0.1755,buis,lin
+growing,0.347,buis,lin
+growth,0.0651,buis,lin
+help,0.2583,buis,lin
+here,0.3639,buis,lin
+hoy,0.2121,buis,lin
+hoy te,0.2121,buis,lin
+inglés,0.3279,buis,lin
+intención,0.2915,buis,lin
+keep,0.1696,buis,lin
+key,0.6094,buis,lin
+latam,0.2197,buis,lin
+let,0.4632,buis,lin
+let connect,0.2392,buis,lin
+linkedin,0.2808,buis,lin
+live,0.4212,buis,lin
+management,0.6293,buis,lin
+mexico,0.3268,buis,lin
+months,0.2139,buis,lin
+move,0.2334,buis,lin
+nearshoring,0.2562,buis,lin
+negociar,0.1912,buis,lin
+negociar tu,0.1231,buis,lin
+offers,0.3104,buis,lin
+oportunidades,0.1986,buis,lin
+opportunities,0.3634,buis,lin
+paso,0.182,buis,lin
+people,0.5997,buis,lin
+perfil,0.2186,buis,lin
+performance,0.1752,buis,lin
+proud,0.1696,buis,lin
+re,0.4684,buis,lin
+re proud,0.1696,buis,lin
+remote,0.3027,buis,lin
+remote teams,0.2317,buis,lin
+remoteteams,0.133,buis,lin
+scale,0.2143,buis,lin
+second,0.1872,buis,lin
+session,0.2855,buis,lin
+sin,0.1438,buis,lin
+strategic,0.1419,buis,lin
+talent,0.457,buis,lin
+talentoglobal,0.3625,buis,lin
+talentoglobal carrerainternacional,0.3625,buis,lin
+te,0.2716,buis,lin
+team,0.4897,buis,lin
+teams,0.4714,buis,lin
+through,1.0,buis,lin
+ti,0.1463,buis,lin
+together,0.3298,buis,lin
+top,0.2197,buis,lin
+trabajo,0.3034,buis,lin
+trabajo empresa,0.2027,buis,lin
+trabajoremoto,0.3334,buis,lin
+trata,0.2585,buis,lin
+tu,0.6598,buis,lin
+tu carrera,0.182,buis,lin
+ve,0.4717,buis,lin
+accessible,0.1201,nvai,lin
+across,0.2133,nvai,lin
+action,0.1419,nvai,lin
+actions,0.123,nvai,lin
+actually,0.2285,nvai,lin
+address,0.0766,nvai,lin
+address authors,0.0766,nvai,lin
+ai,0.2439,nvai,lin
+aligned,0.0854,nvai,lin
+approach,0.0554,nvai,lin
+approaches,0.1143,nvai,lin
+article,0.1261,nvai,lin
+authors,0.0766,nvai,lin
+based,0.1238,nvai,lin
+baselines,0.0929,nvai,lin
+behind,0.2131,nvai,lin
+believe,0.1465,nvai,lin
+benchmark,0.112,nvai,lin
+benchmarks,0.1891,nvai,lin
+better,0.1441,nvai,lin
+beyond,0.1236,nvai,lin
+both,0.0946,nvai,lin
+bottleneck,0.229,nvai,lin
+building,0.1823,nvai,lin
+capable,0.139,nvai,lin
+challenge,0.112,nvai,lin
+challenges,0.139,nvai,lin
+changes,0.1082,nvai,lin
+check,0.166,nvai,lin
+check article,0.1261,nvai,lin
+collection,0.1599,nvai,lin
+combining,0.0942,nvai,lin
+comment,0.1964,nvai,lin
+comment nurvaipaperoftheweek,0.0766,nvai,lin
+companies,0.1097,nvai,lin
+consistent,0.1663,nvai,lin
+constraints,0.1084,nvai,lin
+contact,0.2492,nvai,lin
+continues,0.1135,nvai,lin
+contribution,0.1873,nvai,lin
+control,0.2148,nvai,lin
+coordination,0.0846,nvai,lin
+could,0.1598,nvai,lin
+creating,0.0978,nvai,lin
+critical,0.0927,nvai,lin
+current,0.0744,nvai,lin
+data,1.0,nvai,lin
+data collection,0.1599,nvai,lin
+data robotics,0.0889,nvai,lin
+datacollection,0.6621,nvai,lin
+datasets,0.4443,nvai,lin
+datasets realworlddata,0.139,nvai,lin
+demonstration,0.1688,nvai,lin
+demonstrations,0.1321,nvai,lin
+deployment,0.1357,nvai,lin
+design,0.1523,nvai,lin
+designed,0.1619,nvai,lin
+dexterous,0.3126,nvai,lin
+dexterous robot,0.1955,nvai,lin
+direction,0.2306,nvai,lin
+direction particularly,0.0653,nvai,lin
+directly,0.0848,nvai,lin
+dreamdojo,0.3174,nvai,lin
+dynamics,0.1271,nvai,lin
+egocentric,0.5165,nvai,lin
+egocentric data,0.1931,nvai,lin
+egocentric human,0.306,nvai,lin
+embodied,0.2228,nvai,lin
+embodied ai,0.1715,nvai,lin
+embodiedai,0.1102,nvai,lin
+embodiment,0.1294,nvai,lin
+enabling,0.1218,nvai,lin
+environments,0.1985,nvai,lin
+evaluate,0.0846,nvai,lin
+exactly,0.1969,nvai,lin
+exactly kind,0.1153,nvai,lin
+excited,0.2594,nvai,lin
+excited direction,0.114,nvai,lin
+expensive,0.1452,nvai,lin
+fidelity,0.1238,nvai,lin
+field,0.1769,nvai,lin
+find,0.2046,nvai,lin
+find direction,0.0653,nvai,lin
+find paper,0.0766,nvai,lin
+forward,0.2202,nvai,lin
+foundation,0.1665,nvai,lin
+framework,0.1125,nvai,lin
+general,0.1158,nvai,lin
+generalization,0.1706,nvai,lin
+generate,0.0846,nvai,lin
+got,0.5525,nvai,lin
+got thinking,0.5525,nvai,lin
+grasp,0.1035,nvai,lin
+grounded,0.0672,nvai,lin
+hand,0.1611,nvai,lin
+handle,0.1017,nvai,lin
+hard,0.1022,nvai,lin
+hardware,0.1739,nvai,lin
+helps,0.139,nvai,lin
+helps move,0.139,nvai,lin
+here,0.1164,nvai,lin
+high,0.1388,nvai,lin
+highlight,0.228,nvai,lin
+highlights,0.1486,nvai,lin
+highlights key,0.0554,nvai,lin
+horizon,0.1745,nvai,lin
+human,0.6645,nvai,lin
+human data,0.2554,nvai,lin
+human demonstrations,0.1321,nvai,lin
+humanoid,0.127,nvai,lin
+impact,0.1033,nvai,lin
+improve,0.155,nvai,lin
+improvement,0.0929,nvai,lin
+improvement over,0.0929,nvai,lin
+industry,0.139,nvai,lin
+industry forward,0.139,nvai,lin
+interaction,0.1887,nvai,lin
+interactions,0.1569,nvai,lin
+introduce,0.0653,nvai,lin
+introduces,0.0755,nvai,lin
+key,0.2166,nvai,lin
+key challenge,0.112,nvai,lin
+kind,0.1153,nvai,lin
+kinematics,0.0946,nvai,lin
+language,0.1235,nvai,lin
+language models,0.1235,nvai,lin
+large,0.0843,nvai,lin
+learn,0.1886,nvai,lin
+learning,0.4911,nvai,lin
+level,0.1465,nvai,lin
+limits,0.0672,nvai,lin
+linked,0.111,nvai,lin
+linked comment,0.111,nvai,lin
+long,0.1745,nvai,lin
+long horizon,0.1745,nvai,lin
+looking,0.1578,nvai,lin
+main,0.229,nvai,lin
+main bottleneck,0.229,nvai,lin
+makes,0.0949,nvai,lin
+making,0.1314,nvai,lin
+manipulation,0.3634,nvai,lin
+mismatch,0.0669,nvai,lin
+model,0.1033,nvai,lin
+models,0.461,nvai,lin
+models reason,0.0942,nvai,lin
+most,0.3584,nvai,lin
+move,0.1777,nvai,lin
+move industry,0.139,nvai,lin
+moving,0.1139,nvai,lin
+multi,0.0653,nvai,lin
+must,0.1569,nvai,lin
+narrow,0.1033,nvai,lin
+needs,0.1408,nvai,lin
+news,0.0766,nvai,lin
+news find,0.0766,nvai,lin
+nurvai,0.6203,nvai,lin
+nurvai find,0.0766,nvai,lin
+nurvai paper,0.111,nvai,lin
+nurvai researcher,0.228,nvai,lin
+nurvaipaperoftheweek,0.3495,nvai,lin
+nurvaipaperoftheweek got,0.3575,nvai,lin
+nurvairesearcheroftheweek,0.228,nvai,lin
+nurvairesearcheroftheweek datasets,0.139,nvai,lin
+object,0.1082,nvai,lin
+only,0.1359,nvai,lin
+operator,0.1238,nvai,lin
+over,0.2134,nvai,lin
+paper,0.3721,nvai,lin
+paper highlights,0.0554,nvai,lin
+paper linked,0.111,nvai,lin
+paper read,0.1372,nvai,lin
+part,0.1079,nvai,lin
+particularly,0.1372,nvai,lin
+past,0.1223,nvai,lin
+perception,0.077,nvai,lin
+performance,0.1311,nvai,lin
+physical,0.1344,nvai,lin
+physicalintelligence,0.204,nvai,lin
+pipelines,0.0848,nvai,lin
+planning,0.1158,nvai,lin
+policy,0.0848,nvai,lin
+precise,0.112,nvai,lin
+progress,0.2064,nvai,lin
+propose,0.0766,nvai,lin
+providing,0.1549,nvai,lin
+quality,0.1111,nvai,lin
+raising,0.0554,nvai,lin
+re,0.3157,nvai,lin
+re excited,0.1861,nvai,lin
+read,0.1718,nvai,lin
+real,0.6256,nvai,lin
+real hardware,0.1158,nvai,lin
+real world,0.3751,nvai,lin
+realworlddata,0.1566,nvai,lin
+reason,0.0942,nvai,lin
+reasoning,0.096,nvai,lin
+relevant,0.2381,nvai,lin
+require,0.1418,nvai,lin
+require data,0.1054,nvai,lin
+research,0.1254,nvai,lin
+research news,0.0766,nvai,lin
+researcher,0.228,nvai,lin
+researcher highlight,0.228,nvai,lin
+result,0.0984,nvai,lin
+results,0.1186,nvai,lin
+rich,0.2029,nvai,lin
+right,0.1368,nvai,lin
+rigor,0.1408,nvai,lin
+robot,0.6924,nvai,lin
+robot learning,0.1796,nvai,lin
+robotic,0.286,nvai,lin
+robotic manipulation,0.137,nvai,lin
+robotics,0.9397,nvai,lin
+robotics datasets,0.1956,nvai,lin
+robotics nurvairesearcheroftheweek,0.1395,nvai,lin
+robots,0.2212,nvai,lin
+robust,0.1047,nvai,lin
+same,0.1643,nvai,lin
+scalable,0.2012,nvai,lin
+scale,0.2041,nvai,lin
+scaling,0.2716,nvai,lin
+sequences,0.1017,nvai,lin
+shows,0.1223,nvai,lin
+simple,0.1079,nvai,lin
+simulation,0.0846,nvai,lin
+stay,0.0766,nvai,lin
+stay tuned,0.0766,nvai,lin
+step,0.0854,nvai,lin
+strong,0.1186,nvai,lin
+structured,0.1025,nvai,lin
+style,0.0946,nvai,lin
+supervision,0.0947,nvai,lin
+system,0.0554,nvai,lin
+systems,0.3067,nvai,lin
+take,0.1965,nvai,lin
+takes,0.1609,nvai,lin
+task,0.1894,nvai,lin
+tasks,0.293,nvai,lin
+team,0.4835,nvai,lin
+team behind,0.1395,nvai,lin
+team contribution,0.1324,nvai,lin
+team re,0.1861,nvai,lin
+teleoperation,0.4782,nvai,lin
+these,0.1599,nvai,lin
+thinking,0.5525,nvai,lin
+thinking main,0.229,nvai,lin
+toward,0.2017,nvai,lin
+train,0.077,nvai,lin
+trained,0.0766,nvai,lin
+training,0.3423,nvai,lin
+tuned,0.0766,nvai,lin
+tuned research,0.0766,nvai,lin
+unified,0.0554,nvai,lin
+using,0.1725,nvai,lin
+video,0.2195,nvai,lin
+vision,0.1235,nvai,lin
+vision language,0.1235,nvai,lin
+vla,0.1033,nvai,lin
+vr,0.2521,nvai,lin
+where,0.1156,nvai,lin
+while,0.1357,nvai,lin
+without,0.0947,nvai,lin
+world,0.473,nvai,lin
+years,0.1393,nvai,lin
+abstraction,0.0525,nvai,x
+access,0.1054,nvai,x
+achieved,0.153,nvai,x
+across,0.2758,nvai,x
+across different,0.0889,nvai,x
+across embodiments,0.0775,nvai,x
+action,0.2156,nvai,x
+actions,0.1427,nvai,x
+actually,0.1268,nvai,x
+ai,0.2263,nvai,x
+aligned,0.1018,nvai,x
+allows,0.0933,nvai,x
+always,0.1254,nvai,x
+amounts,0.0578,nvai,x
+approach,0.2568,nvai,x
+approaches,0.1334,nvai,x
+arm,0.1927,nvai,x
+authors,0.1148,nvai,x
+automation,0.0614,nvai,x
+based,0.0821,nvai,x
+because,0.1621,nvai,x
+become,0.0635,nvai,x
+becomes,0.1146,nvai,x
+before,0.0579,nvai,x
+behavior,0.0721,nvai,x
+behaviors,0.0576,nvai,x
+being,0.0617,nvai,x
+benchmark,0.1704,nvai,x
+benchmarks,0.1556,nvai,x
+better,0.2587,nvai,x
+between,0.1301,nvai,x
+beyond,0.1034,nvai,x
+big,0.0793,nvai,x
+biggest,0.0913,nvai,x
+body,0.0524,nvai,x
+both,0.1353,nvai,x
+bottleneck,0.189,nvai,x
+bridge,0.062,nvai,x
+broader,0.0623,nvai,x
+build,0.103,nvai,x
+building,0.0674,nvai,x
+built,0.1372,nvai,x
+capture,0.0744,nvai,x
+cases,0.0539,nvai,x
+challenge,0.1086,nvai,x
+changing,0.0924,nvai,x
+check,0.1174,nvai,x
+choice,0.0981,nvai,x
+clean,0.0667,nvai,x
+cleaning,0.1891,nvai,x
+collect,0.5661,nvai,x
+collection,0.0538,nvai,x
+compared,0.0508,nvai,x
+complex,0.2568,nvai,x
+complex tasks,0.1115,nvai,x
+conditions,0.0787,nvai,x
+congrats,0.1037,nvai,x
+constraints,0.0928,nvai,x
+contact,0.3645,nvai,x
+contact rich,0.2672,nvai,x
+continuous,0.0693,nvai,x
+control,0.4566,nvai,x
+cool,0.1166,nvai,x
+coordination,0.0566,nvai,x
+cost,0.0755,nvai,x
+could,0.1894,nvai,x
+could meaningfully,0.1213,nvai,x
+creates,0.156,nvai,x
+critical,0.053,nvai,x
+cross,0.0831,nvai,x
+cross embodiment,0.0831,nvai,x
+curious,0.1133,nvai,x
+data,1.0,nvai,x
+data collection,0.0538,nvai,x
+data scaling,0.101,nvai,x
+dataset,0.0625,nvai,x
+datasets,0.587,nvai,x
+demonstrations,0.1717,nvai,x
+demos,0.0837,nvai,x
+deployment,0.2114,nvai,x
+depth,0.0987,nvai,x
+design,0.2397,nvai,x
+designed,0.0971,nvai,x
+development,0.1596,nvai,x
+dexdrummer,0.1571,nvai,x
+dexterity,0.168,nvai,x
+dexterous,0.2596,nvai,x
+dexterous manipulation,0.1581,nvai,x
+dexterous robot,0.1312,nvai,x
+different,0.1347,nvai,x
+difficulty,0.1109,nvai,x
+direction,0.2134,nvai,x
+directly,0.1505,nvai,x
+diverse,0.1467,nvai,x
+diversity,0.0804,nvai,x
+doing,0.0939,nvai,x
+done,0.0952,nvai,x
+dr,0.1412,nvai,x
+dreamdojo,0.2544,nvai,x
+drumming,0.2567,nvai,x
+dual,0.1927,nvai,x
+dual arm,0.1927,nvai,x
+due,0.1245,nvai,x
+dynamic,0.0534,nvai,x
+dynamics,0.0798,nvai,x
+efficiency,0.0792,nvai,x
+egocentric,0.4488,nvai,x
+egocentric data,0.2052,nvai,x
+egocentric human,0.223,nvai,x
+embodied,0.1973,nvai,x
+embodied ai,0.1782,nvai,x
+embodiment,0.3173,nvai,x
+embodiment mismatch,0.1541,nvai,x
+embodiments,0.0775,nvai,x
+end,0.1233,nvai,x
+environments,0.16,nvai,x
+especially,0.1096,nvai,x
+et,0.1284,nvai,x
+evaluate,0.0971,nvai,x
+evaluation,0.0836,nvai,x
+exactly,0.1101,nvai,x
+excited,0.1529,nvai,x
+expensive,0.0953,nvai,x
+failures,0.0646,nvai,x
+far,0.1045,nvai,x
+fast,0.0828,nvai,x
+feedback,0.0629,nvai,x
+feels,0.1097,nvai,x
+fidelity,0.0842,nvai,x
+fine,0.0776,nvai,x
+forward,0.2518,nvai,x
+foundation,0.127,nvai,x
+foundation model,0.127,nvai,x
+framework,0.1195,nvai,x
+free,0.057,nvai,x
+full,0.1974,nvai,x
+future,0.2427,nvai,x
+gains,0.0778,nvai,x
+gap,0.1087,nvai,x
+generalist,0.0736,nvai,x
+generalizable,0.2107,nvai,x
+generalization,0.1293,nvai,x
+generalize,0.0994,nvai,x
+gets,0.0658,nvai,x
+got,0.1399,nvai,x
+got thinking,0.1399,nvai,x
+gripper,0.0787,nvai,x
+guys,0.1436,nvai,x
+hand,0.2974,nvai,x
+handle,0.1594,nvai,x
+handling,0.1805,nvai,x
+happy,0.2704,nvai,x
+hard,0.1819,nvai,x
+hardware,0.2199,nvai,x
+help,0.1874,nvai,x
+helps,0.1128,nvai,x
+here,0.4033,nvai,x
+here ve,0.2387,nvai,x
+hierarchical,0.1376,nvai,x
+high,0.3243,nvai,x
+high quality,0.2614,nvai,x
+highlight,0.0595,nvai,x
+highlights,0.1332,nvai,x
+holds,0.0713,nvai,x
+horizon,0.1711,nvai,x
+hours,0.1124,nvai,x
+however,0.1314,nvai,x
+huge,0.1258,nvai,x
+human,0.5785,nvai,x
+human data,0.2638,nvai,x
+humanoid,0.1786,nvai,x
+humanoids,0.0805,nvai,x
+humans,0.1106,nvai,x
+idea,0.0844,nvai,x
+impressive,0.1776,nvai,x
+improve,0.1427,nvai,x
+improvement,0.107,nvai,x
+improving,0.1531,nvai,x
+insight,0.0698,nvai,x
+instead,0.1272,nvai,x
+intelligence,0.0716,nvai,x
+interaction,0.3083,nvai,x
+interaction data,0.0726,nvai,x
+interactions,0.3083,nvai,x
+interfaces,0.1351,nvai,x
+introduces,0.1248,nvai,x
+intuitive,0.0788,nvai,x
+issue,0.2424,nvai,x
+issues,0.0963,nvai,x
+key,0.3844,nvai,x
+kind,0.1096,nvai,x
+kinematics,0.0627,nvai,x
+lab,0.0612,nvai,x
+language,0.1247,nvai,x
+large,0.1856,nvai,x
+large scale,0.1473,nvai,x
+latency,0.1321,nvai,x
+latent,0.0777,nvai,x
+learn,0.1207,nvai,x
+learning,0.3268,nvai,x
+learnt,0.2387,nvai,x
+less,0.0542,nvai,x
+level,0.1032,nvai,x
+limited,0.0841,nvai,x
+limits,0.1793,nvai,x
+loco,0.1862,nvai,x
+loco manipulation,0.1862,nvai,x
+long,0.1807,nvai,x
+long horizon,0.1615,nvai,x
+looking,0.0566,nvai,x
+lot,0.0928,nvai,x
+low,0.1022,nvai,x
+main,0.0891,nvai,x
+major,0.0951,nvai,x
+makes,0.1822,nvai,x
+makes sense,0.0609,nvai,x
+making,0.1425,nvai,x
+manipulation,0.7112,nvai,x
+manipulators,0.1831,nvai,x
+many,0.051,nvai,x
+matter,0.0701,nvai,x
+matters,0.1267,nvai,x
+may,0.0688,nvai,x
+meaningful,0.1146,nvai,x
+meaningfully,0.1292,nvai,x
+means,0.1194,nvai,x
+messy,0.0789,nvai,x
+mismatch,0.3454,nvai,x
+model,0.3289,nvai,x
+models,0.4239,nvai,x
+most,0.2843,nvai,x
+motion,0.0624,nvai,x
+moving,0.0843,nvai,x
+much,0.2733,nvai,x
+narrow,0.0807,nvai,x
+naturally,0.0607,nvai,x
+needed,0.0577,nvai,x
+nice,0.0895,nvai,x
+non,0.2034,nvai,x
+nurvaipaperoftheweek,0.2457,nvai,x
+nurvaipaperoftheweek got,0.0908,nvai,x
+nurvaipaperoftheweek read,0.186,nvai,x
+object,0.2211,nvai,x
+object interactions,0.1579,nvai,x
+objects,0.1143,nvai,x
+often,0.1101,nvai,x
+once,0.1961,nvai,x
+only,0.1774,nvai,x
+open,0.0951,nvai,x
+operating,0.0568,nvai,x
+operator,0.0659,nvai,x
+over,0.2857,nvai,x
+paper,0.3422,nvai,x
+paper here,0.1047,nvai,x
+paper introduces,0.0987,nvai,x
+perception,0.2081,nvai,x
+performance,0.144,nvai,x
+person,0.1309,nvai,x
+perspective,0.0691,nvai,x
+philosophy,0.0506,nvai,x
+physbrain,0.1755,nvai,x
+physical,0.1891,nvai,x
+physical reasoning,0.1315,nvai,x
+physics,0.1666,nvai,x
+pipeline,0.1893,nvai,x
+pipelines,0.2004,nvai,x
+planning,0.1433,nvai,x
+platform,0.1058,nvai,x
+point,0.159,nvai,x
+policies,0.1263,nvai,x
+policy,0.2198,nvai,x
+powerful,0.0743,nvai,x
+practice,0.0685,nvai,x
+precise,0.1591,nvai,x
+pretrained,0.0855,nvai,x
+priors,0.0627,nvai,x
+problem,0.1904,nvai,x
+process,0.0555,nvai,x
+progress,0.101,nvai,x
+proposes,0.2222,nvai,x
+providing,0.1118,nvai,x
+push,0.1116,nvai,x
+pushing,0.0742,nvai,x
+quality,0.2873,nvai,x
+quality data,0.0901,nvai,x
+question,0.0629,nvai,x
+rather,0.0559,nvai,x
+raw,0.098,nvai,x
+re,0.1966,nvai,x
+read,0.391,nvai,x
+read full,0.1241,nvai,x
+real,0.6244,nvai,x
+real hardware,0.1038,nvai,x
+real world,0.408,nvai,x
+reasoning,0.1587,nvai,x
+reducing,0.0735,nvai,x
+relying,0.0928,nvai,x
+reminder,0.1066,nvai,x
+require,0.1014,nvai,x
+requires,0.0759,nvai,x
+research,0.1233,nvai,x
+result,0.0791,nvai,x
+results,0.2042,nvai,x
+rich,0.3731,nvai,x
+rich interaction,0.1049,nvai,x
+right,0.0671,nvai,x
+risk,0.146,nvai,x
+robot,0.7235,nvai,x
+robot control,0.1268,nvai,x
+robot data,0.0551,nvai,x
+robot drumming,0.1571,nvai,x
+robot learning,0.1894,nvai,x
+robotic,0.0949,nvai,x
+robotics,0.5726,nvai,x
+robots,0.54,nvai,x
+running,0.0612,nvai,x
+samples,0.0901,nvai,x
+scalable,0.06,nvai,x
+scale,0.2495,nvai,x
+scaling,0.2494,nvai,x
+semantic,0.0622,nvai,x
+sense,0.0628,nvai,x
+sequences,0.0881,nvai,x
+settings,0.0876,nvai,x
+short,0.0557,nvai,x
+showing,0.0866,nvai,x
+shows,0.2274,nvai,x
+sim,0.0841,nvai,x
+simulation,0.1912,nvai,x
+skills,0.091,nvai,x
+small,0.062,nvai,x
+solid,0.0704,nvai,x
+solution,0.1143,nvai,x
+solve,0.0656,nvai,x
+source,0.0924,nvai,x
+space,0.1427,nvai,x
+step,0.1723,nvai,x
+step forward,0.1471,nvai,x
+still,0.135,nvai,x
+strong,0.0811,nvai,x
+structured,0.1984,nvai,x
+success,0.0561,nvai,x
+such,0.1035,nvai,x
+supervision,0.0751,nvai,x
+surface,0.0516,nvai,x
+system,0.1296,nvai,x
+systems,0.2406,nvai,x
+tactile,0.1661,nvai,x
+task,0.2227,nvai,x
+tasks,0.3741,nvai,x
+team,0.2394,nvai,x
+teleoperation,0.3595,nvai,x
+test,0.1622,nvai,x
+them,0.2771,nvai,x
+these,0.2368,nvai,x
+these systems,0.0518,nvai,x
+thinking,0.1712,nvai,x
+through,0.1742,nvai,x
+tl,0.1412,nvai,x
+tl dr,0.1412,nvai,x
+tool,0.0901,nvai,x
+tools,0.149,nvai,x
+trade,0.1391,nvai,x
+train,0.0963,nvai,x
+trained,0.2089,nvai,x
+training,0.1874,nvai,x
+trajectories,0.0714,nvai,x
+transfer,0.1263,nvai,x
+try,0.0522,nvai,x
+type,0.1465,nvai,x
+under,0.0838,nvai,x
+understanding,0.1276,nvai,x
+underwater,0.0629,nvai,x
+unified,0.1758,nvai,x
+useful,0.0818,nvai,x
+using,0.3424,nvai,x
+valuable,0.0667,nvai,x
+variability,0.1045,nvai,x
+ve,0.2409,nvai,x
+ve learnt,0.2387,nvai,x
+very,0.281,nvai,x
+very cool,0.1099,nvai,x
+video,0.133,nvai,x
+vision,0.1612,nvai,x
+vision language,0.096,nvai,x
+visual,0.1084,nvai,x
+vla,0.1236,nvai,x
+vlas,0.1006,nvai,x
+vlms,0.1433,nvai,x
+vr,0.2608,nvai,x
+vr interfaces,0.1323,nvai,x
+where,0.1432,nvai,x
+whether,0.0631,nvai,x
+while,0.235,nvai,x
+why,0.1227,nvai,x
+without,0.3034,nvai,x
+world,0.6109,nvai,x
+world data,0.1257,nvai,x
+world model,0.1754,nvai,x
+world models,0.205,nvai,x
+would,0.1984,nvai,x
+agradecer,0.239,tal,lin
+alto,0.0637,tal,lin
+alto desempeño,0.0637,tal,lin
+así,0.0523,tal,lin
+año,0.1958,tal,lin
+años,0.1311,tal,lin
+bilingüe,0.0586,tal,lin
+celebramos,0.1571,tal,lin
+cerrillo,0.2348,tal,lin
+clave,0.1011,tal,lin
+colaboradores,0.1031,tal,lin
+compromiso,0.1139,tal,lin
+comunidad,0.0814,tal,lin
+conectar,0.3305,tal,lin
+conjunto,0.1217,tal,lin
+creando,0.2312,tal,lin
+crecer,0.1459,tal,lin
+cuidarnos,0.0817,tal,lin
+cultura,0.2841,tal,lin
+cumplen,0.0785,tal,lin
+cumplen años,0.0785,tal,lin
+cómo,0.179,tal,lin
+dentro,0.2502,tal,lin
+desempeño,0.0637,tal,lin
+diseñado,0.0682,tal,lin
+donde,0.4707,tal,lin
+días,0.4075,tal,lin
+emoción,0.051,tal,lin
+employerbranding,0.0775,tal,lin
+energía,0.2166,tal,lin
+entrevistas,0.0652,tal,lin
+equipo,1.0,tal,lin
+equipo people,0.1732,tal,lin
+equipo reclutamiento,0.2548,tal,lin
+equipos,0.0589,tal,lin
+espacios,0.1732,tal,lin
+especial,0.1819,tal,lin
+experiencia,0.0568,tal,lin
+forma,0.0985,tal,lin
+forma parte,0.0572,tal,lin
+garcía,0.0821,tal,lin
+garcía vera,0.0821,tal,lin
+gracias,0.3669,tal,lin
+guadalajara,0.3654,tal,lin
+hacen,0.212,tal,lin
+hacer,0.2024,tal,lin
+hamdan,0.2642,tal,lin
+hasta,0.066,tal,lin
+hiring,0.1147,tal,lin
+hoy,0.5727,tal,lin
+idea,0.0545,tal,lin
+iniciativa,0.1539,tal,lin
+juntos,0.2209,tal,lin
+lanzamos,0.2731,tal,lin
+líder,0.2642,tal,lin
+líder reclutamiento,0.2642,tal,lin
+marcela,0.0821,tal,lin
+marcela garcía,0.0821,tal,lin
+maricela,0.2904,tal,lin
+maricela hamdan,0.2642,tal,lin
+marita,0.2567,tal,lin
+marketing,0.5372,tal,lin
+marzo,0.2312,tal,lin
+momentos,0.4618,tal,lin
+nosotros,0.3773,tal,lin
+nuestra,0.6584,tal,lin
+nuestra líder,0.0725,tal,lin
+nuestros,0.0763,tal,lin
+nueva,0.0528,tal,lin
+oficina,0.0817,tal,lin
+operations,0.0816,tal,lin
+operations marketing,0.0785,tal,lin
+organizar,0.2312,tal,lin
+parte,0.2954,tal,lin
+pasado,0.237,tal,lin
+people,0.2087,tal,lin
+people operations,0.0816,tal,lin
+persona,0.1175,tal,lin
+personas,0.6071,tal,lin
+perspectiva,0.4994,tal,lin
+porque,0.422,tal,lin
+primer,0.056,tal,lin
+puede,0.0851,tal,lin
+quienes,0.1041,tal,lin
+quienes cumplen,0.0785,tal,lin
+real,0.2597,tal,lin
+reclutador,0.06,tal,lin
+reclutamiento,0.4646,tal,lin
+reclutamiento talento,0.0656,tal,lin
+reconectar,0.0636,tal,lin
+reconocemos,0.0785,tal,lin
+reconocemos quienes,0.0785,tal,lin
+salud,0.1515,tal,lin
+seguimos,0.2206,tal,lin
+seguimos creando,0.2312,tal,lin
+semana,0.0865,tal,lin
+serie,0.2699,tal,lin
+sesión,0.0636,tal,lin
+siempre,0.0545,tal,lin
+sin,0.0851,tal,lin
+sino,0.2181,tal,lin
+sobre,0.0745,tal,lin
+somos,0.1946,tal,lin
+suma,0.4733,tal,lin
+sábado,0.1778,tal,lin
+talento,0.1818,tal,lin
+también,0.3367,tal,lin
+te,0.4311,tal,lin
+todas,0.0851,tal,lin
+todo,0.2995,tal,lin
+tu,0.0887,tal,lin
+tuvimos,0.2034,tal,lin
+valeria,0.2348,tal,lin
+valeria cerrillo,0.2348,tal,lin
+veces,0.1995,tal,lin
+vera,0.0821,tal,lin
+vida,0.1094,tal,lin
+visibilizar,0.0785,tal,lin
