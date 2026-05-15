@@ -4,4 +4,5 @@ scikit-learn
 umap-learn
 sentence-transformers
 sqlalchemy
+google-analytics-data 
 
