@@ -191,7 +191,7 @@ CREATE TABLE Posts (
     format_id INT,
     content_pillar_id INT,
     strategy_pillar_id INT,
-    created_at DATETIME,
+    date DATETIME,
     impressions INT,
     views INT,
     clicks INT,

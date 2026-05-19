@@ -6,5 +6,5 @@ sentence-transformers
 sqlalchemy
 google-analytics-data 
 requests
-ollama 
+ollama
 

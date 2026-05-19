@@ -55,7 +55,7 @@ def retrieve_similar_posts(post_text, source, df, top_k=TOP_K):
 
     # remove identical post
     source_df = source_df[
-        source_df["text"] != post_text
+        source_df["postText"] != post_text
     ]
 
     return source_df.head(top_k)
@@ -82,7 +82,7 @@ def classify_post(
 
     context_posts = "\n".join([
         f"- {t[:300]}"
-        for t in similar_posts["text"].tolist()
+        for t in similar_posts["postText"].tolist()
     ])
 
     prompt = f"""
@@ -160,10 +160,12 @@ metrics_new_columns = list(pd.read_sql('SELECT * FROM Metrics',engine_new).drop(
 Metrics_new = Metrics_old[metrics_new_columns]
 
 int_cols = ["bookmarks","clicks","comments","engagements","followersGained","followersTotal","impressions",
-            "reactions", "shares", "unfollows", "account_id"]
+            "reactions", "shares", "unfollows", "account_id",'timesSent','profileVisits','detailExpands','urlClicks',
+            'hashtagClicks','permalinkClicks']
 
 for col in int_cols:
-    Metrics_new[col] = (Metrics_new[col]//1).astype("Int64")
+    if col in Metrics_new.columns:
+        Metrics_new[col] = (Metrics_new[col]//1).astype("Int64")
 
 Metrics_new["row_hash"] = add_row_hash(Metrics_new[['date','account_id']])['row_hash']
 Metrics_new['updated_at'] = datetime.now()
@@ -247,17 +249,19 @@ Posts_old["format_id"] = classification_df["format_id"]
 Posts_old["content_pillar_id"] = classification_df["content_pillar_id"]
 Posts_old["strategy_pillar_id"] = classification_df["strategy_pillar_id"]
 
+Posts_old['created_at'] = Posts_old['date']
 posts_new_columns = list(pd.read_sql('SELECT * FROM Posts',engine_new).drop(columns = ['row_hash','updated_at']).columns)
 
 Posts_new = Posts_old[posts_new_columns]
 
-Posts_new.to_sql("Posts",engine_new,if_exists="append",index=False)
-
 for col in int_cols:
-    Posts_new[col] = (Posts_new[col]//1).astype("Int64")
-
-Posts_new["row_hash"] = add_row_hash(Metrics_new[['postText','account_id']])['row_hash']
+    if col in Posts_new.columns:
+        Posts_new[col] = (Posts_new[col]//1).astype("Int64")
+        
+Posts_new["row_hash"] = add_row_hash(Posts_new[['postText','account_id']])['row_hash']
 Posts_new['updated_at'] = datetime.now()
+
+Posts_new.to_sql("Posts",engine_new,if_exists="append",index=False)
 
 Terms_old = pd.read_sql('SELECT * FROM Terms',engine_old)
 
