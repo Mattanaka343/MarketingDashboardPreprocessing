@@ -267,7 +267,7 @@ Terms_old = pd.read_sql('SELECT * FROM Terms',engine_old)
 
 Terms_old['account_id'] = [map[(chan,acc)] for chan,acc in zip(Terms_old['chan'],Terms_old['acc'])]
 
-terms_new_columns = list(pd.read_sql('SELECT * FROM Terms').drop(columns=['row_hash','updated_at']).columns())
+terms_new_columns = list(pd.read_sql('SELECT * FROM Terms',engine_new).drop(columns=['row_hash','updated_at']).columns)
 
 Terms_new = Terms_old[terms_new_columns]
 
