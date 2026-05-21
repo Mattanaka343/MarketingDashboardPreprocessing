@@ -232,7 +232,7 @@ CREATE TABLE Posts (
 );
 
 CREATE TABLE Terms (
-    term VARCHAR(20),
+    term VARCHAR(300),
     engagement_score DOUBLE,
     account_id INT,
     row_hash VARCHAR(32) PRIMARY KEY,

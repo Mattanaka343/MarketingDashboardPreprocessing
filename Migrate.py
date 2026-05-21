@@ -251,7 +251,7 @@ Posts_old["strategy_pillar_id"] = classification_df["strategy_pillar_id"]
 
 Posts_old['created_at'] = Posts_old['date']
 posts_new_columns = list(pd.read_sql('SELECT * FROM Posts',engine_new).drop(columns = ['row_hash','updated_at']).columns)
-
+    
 Posts_new = Posts_old[posts_new_columns]
 
 for col in int_cols:
