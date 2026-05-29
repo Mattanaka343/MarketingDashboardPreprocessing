@@ -1,114 +1,39 @@
-import hashlib
-from datetime import datetime
 import os
+import smtplib
+import hashlib 
 
 from glob import glob
-from sqlalchemy import text, String
+from dotenv import load_dotenv
 
-def pass_to_sql(
-    df,
-    engine,
-    table_name,
-    unique_cols=None,  
-    timestamp_col="updated_at"
-):
+from email.mime.text import MIMEText
 
-    df = df.copy()
+load_dotenv()
 
-    if unique_cols is None:
-        df = add_row_hash(df)
-        unique_cols = ["row_hash"]
+DATA_PATH = os.getenv('DATA_PATH')
+GMAIL_USER = os.getenv("GMAIL_USER")
+GMAIL_PASS = os.getenv("GMAIL_APP_PASSWORD")
+RECIPIENT = os.getenv("NOTIFY_TO")
 
+def find_files() -> list:
+    paths = glob(DATA_PATH+'*.*')
+    if paths == []:
+        return None
     else:
-        df["row_hash"] = add_row_hash(df[unique_cols])['row_hash']
-        unique_cols = ["row_hash"]
+        return paths
+    
 
-    df[timestamp_col] = datetime.now()
+def send_mail(subject:str,body:str):
+    """
+    Sends an automated e-mail with body and subject
+    """
+    msg = MIMEText(body)
+    msg["Subject"] = subject
+    msg["FROM"] = GMAIL_USER
+    msg["To"] = RECIPIENT
 
-    df.head(0).to_sql(
-        table_name,
-        con=engine,
-        if_exists="append",
-        index=False,
-        dtype={
-            "row_hash": String(32)
-        }
-    )
-
-    constraint_name = f"unique_row_{table_name}"
-
-
-    with engine.connect() as conn:
-
-        col_exists = conn.execute(text(f"""
-            SELECT COUNT(*)
-            FROM information_schema.columns
-            WHERE table_schema = 'mkt'
-            AND table_name = '{table_name}'
-            AND column_name = 'row_hash';
-        """)).scalar()
-
-        if not col_exists:
-            conn.execute(text(f"""
-                ALTER TABLE {table_name}
-                ADD COLUMN row_hash VARCHAR(32);
-            """))
-
-        ts_exists = conn.execute(text(f"""
-            SELECT COUNT(*)
-            FROM information_schema.columns
-            WHERE table_schema = 'mkt'
-            AND table_name = '{table_name}'
-            AND column_name = '{timestamp_col}';
-        """)).scalar()
-
-        if not ts_exists:
-            conn.execute(text(f"""
-                ALTER TABLE {table_name}
-                ADD COLUMN {timestamp_col} DATETIME;
-            """))
-
-        exists = conn.execute(text(f"""
-            SELECT COUNT(*)
-            FROM information_schema.statistics
-            WHERE table_schema = 'mkt'
-            AND table_name = '{table_name}'
-            AND index_name = '{constraint_name}';
-        """)).scalar()
-
-        if not exists:
-            conn.execute(text(f"""
-                ALTER TABLE {table_name}
-                ADD CONSTRAINT {constraint_name}
-                UNIQUE (`row_hash`);
-            """))
-
-    temp_table = f"{table_name}_temp"
-
-    df.to_sql(
-        temp_table,
-        con=engine,
-        if_exists="replace",
-        index=False
-    )
-
-
-    with engine.connect() as conn:
-
-        cols = ", ".join(df.columns)
-        updates = ", ".join(
-            [f"{col}=VALUES({col})" for col in df.columns]
-        )
-
-        conn.execute(text(f"""
-            INSERT INTO {table_name} ({cols})
-            SELECT {cols}
-            FROM {temp_table}
-            ON DUPLICATE KEY UPDATE
-            {updates};
-        """))
-
-        conn.execute(text(f"DROP TABLE {temp_table}"))
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465,) as smtp:
+        smtp.login(GMAIL_USER,GMAIL_PASS)
+        smtp.sendmail(GMAIL_USER,RECIPIENT,msg.as_string())
 
 def add_row_hash(df):
     df = df.copy()
@@ -122,38 +47,7 @@ def add_row_hash(df):
     )
     return df
 
-def upsert(engine):
-    with engine.connect() as conn:
-        query = text(
-        """
-        UPDATE Metrics m
-        JOIN (
-            SELECT
-                acc,
-                chan,
-                date,
-                SUM(
-                    COALESCE(followersGained, 0) 
-                    - COALESCE(unfollows, 0)
-                ) OVER (
-                    PARTITION BY acc, chan
-                    ORDER BY date
-                    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-                ) AS followersTotal_calc
-            FROM Metrics
-        ) t
-        ON m.acc = t.acc
-        AND m.chan = t.chan
-        AND m.date = t.date
-        SET m.followersTotal = t.followersTotal_calc;
-        """)
-        conn.execute(query)
-        conn.commit()
-
-def clear_temp_files():
-    excels = glob('Data/**/**.xls')
-    csv = glob('Data/**/**.csv')
-
-    allFiles = excels + csv
+def clear_temp_files(allFiles:list):
     for file in allFiles:
         os.remove(file) 
+
