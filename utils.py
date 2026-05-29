@@ -4,6 +4,7 @@ import hashlib
 
 from glob import glob
 from dotenv import load_dotenv
+from pandas import DataFrame
 
 from email.mime.text import MIMEText
 
@@ -50,4 +51,16 @@ def add_row_hash(df):
 def clear_temp_files(allFiles:list):
     for file in allFiles:
         os.remove(file) 
+
+def is_corrupted(df: DataFrame, tolerance: int = 0.6) -> bool:
+    if df is None:
+        return False
+    
+    criterion = len(df)*tolerance
+    magic_number = len(df[df['impressions']==0])
+
+    if magic_number > criterion:
+        return True
+    
+    return False
 

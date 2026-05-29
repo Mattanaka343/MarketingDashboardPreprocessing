@@ -1,7 +1,7 @@
 from extract import linkedInExtraction,xExtraction
 from transform import transform_metrics, transform_posts
 from load import get_conn, pass_to_sql
-from utils import find_files, send_mail, clear_temp_files
+from utils import find_files, send_mail, clear_temp_files, is_corrupted
 
 exceptions = []
 
@@ -29,6 +29,14 @@ try:
         try:
             MetDF, PostDF = linkedInExtraction(paths,brand,engine)
             XMetDF, XPostDF = xExtraction(paths,brand,engine)
+            
+            if is_corrupted(MetDF) or is_corrupted(PostDF):
+                metrics_dfs.append(None)
+                metrics_dfs.append(XMetDF)
+                posts_dfs.append(None)
+                posts_dfs.append(XPostDF)
+                m = f'The LinkedIn files for {brand} were corrupted (LinkedIn absolutely sucks)'
+                raise ImportError
 
             metrics_dfs.append(MetDF)
             metrics_dfs.append(XMetDF)
@@ -46,6 +54,8 @@ try:
             elif MetDF is None and PostDF is None:
                 m = f"No Data found for {brand[1]}'s LinkedIN"
                 raise FileNotFoundError
+            
+
         except Exception as e:
             text = f'{type(e).__name__}: {str(e)} {m}'
             exceptions.append(text)
