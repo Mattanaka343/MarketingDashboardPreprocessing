@@ -447,7 +447,7 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
     terms['row_hash'] = add_row_hash(terms[['term','account_id']])['row_hash']
     terms['updated_at'] = datetime.now()
 
-    TermsDF = _bend_to_sql_shape(df,'Terms',engine)
+    TermsDF = _bend_to_sql_shape(terms,'Terms',engine)
     
     return PostDF, TermsDF, exceptions
 
