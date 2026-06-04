@@ -402,7 +402,7 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
 
         try:
 
-            strategy_pillars = STRAT_PILLAR_MAP.loc[STRAT_PILLAR_MAP['account_id '] == row['account_id']].to_dict()['pillar']
+            strategy_pillars = STRAT_PILLAR_MAP.loc[STRAT_PILLAR_MAP['account_id'] == row['account_id']].to_dict()['pillar']
 
             classification = _classify_post(
                 post_text=row["postText"],
