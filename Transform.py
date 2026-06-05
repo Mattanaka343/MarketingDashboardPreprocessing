@@ -444,6 +444,8 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
         if 'id' in col:
             df[col] = (df[col]//1).astype("Int64")
 
+    df = df.replace({np.nan: None})
+
     PostDF = _bend_to_sql_shape(df,'Posts',engine)
 
     terms = _get_top_terms(df)
