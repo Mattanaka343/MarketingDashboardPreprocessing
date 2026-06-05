@@ -439,6 +439,10 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
     for col in INT_COLS:
         if col in df.columns:
             df[col] = (df[col]//1).astype("Int64")
+    
+    for col in df.columns:
+        if 'id' in col:
+            df[col] = (df[col]//1).astype("Int64")
 
     PostDF = _bend_to_sql_shape(df,'Posts',engine)
 
