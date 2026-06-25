@@ -243,21 +243,3 @@ CREATE TABLE Terms (
         REFERENCES SocialMediaAccounts(id)
 );
 
-CREATE TABLE Traffic (
-    page_id INT NOT NULL,
-    date DATETIME,
-    source_id INT,
-    sessions INT,
-    engagedSessions INT,
-    conversions INT,
-    userEngagementDuration DOUBLE,
-    row_hash VARCHAR(32) PRIMARY KEY,
-
-    CONSTRAINT traffic_page
-        FOREIGN KEY (page_id)
-        REFERENCES Websites(id),
-
-    CONSTRAINT traffic_source
-        FOREIGN KEY (source_id)
-        REFERENCES Sources(id)
-);

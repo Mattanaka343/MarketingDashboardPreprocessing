@@ -1,4 +1,4 @@
-from extract import linkedInExtraction,xExtraction
+from extract import linkedInExtraction,xExtraction, instaExtraction
 from transform import transform_metrics, transform_posts
 from load import get_conn, pass_to_sql
 from utils import find_files, send_mail, clear_temp_files, is_corrupted
@@ -27,8 +27,9 @@ try:
     for brand in BRANDS:
         m=''
         try:
-            MetDF, PostDF = linkedInExtraction(paths,brand,engine)
-            XMetDF, XPostDF = xExtraction(paths,brand,engine)
+            MetDF, PostDF           = linkedInExtraction(paths,brand,engine)
+            XMetDF, XPostDF         = xExtraction(paths,brand,engine)
+            instaDF, instaPostDF    = instaExtraction(brand,engine)
             
             if is_corrupted(MetDF) or is_corrupted(PostDF):
                 metrics_dfs.append(None)
@@ -40,8 +41,11 @@ try:
 
             metrics_dfs.append(MetDF)
             metrics_dfs.append(XMetDF)
+            metrics_dfs.append(instaDF)
+            
             posts_dfs.append(PostDF)
-            posts_dfs.append(XPostDF)            
+            posts_dfs.append(XPostDF)
+            posts_dfs.append(instaPostDF)            
 
             if MetDF is None and PostDF is not None:
                 m = f"No Metrics Data found for {brand[1]}'s LinkedIN"
