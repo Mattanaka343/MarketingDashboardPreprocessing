@@ -123,7 +123,6 @@ INSTA_ACCOUNTS = {
     },
 }
 
-# --- ACCOUNT METRICS CONFIG ---
 _INSTA_ACCOUNT_METRICS_TS = ["follower_count", "reach"]
 _INSTA_ACCOUNT_METRICS_TV = ["accounts_engaged", "total_interactions", "views"]
 
@@ -131,12 +130,9 @@ RENAME_MAP_INSTA_METRICS = {
     "follower_count": "followersGained",
     "accounts_engaged": "accountsEngaged",
     "total_interactions": "engagements",
-    "views": "impressions"  # Fills your strict account impressions column
+    "views": "impressions"  
 }
 
-# --- POST METRICS CONFIG ---
-# Removed 'impressions' to bypass the v22.0+ restriction entirely
-# Standard Post Insight Metrics (For Images, Carousels, and standard FEED Videos)
 _INSTA_POST_METRICS = [
     "reach", 
     "total_interactions", 
@@ -144,7 +140,6 @@ _INSTA_POST_METRICS = [
     "views"  
 ]
 
-# Unique metrics ONLY supported by authentic REELS tab objects
 _INSTA_POST_METRICS_REELS = [
     "reach", 
     "saved", 
@@ -156,7 +151,6 @@ _INSTA_POST_METRICS_REELS = [
 ]
 
 RENAME_MAP_INSTA_POSTS = {
-    # Core media endpoints (Vital for your internal row_hash string generator)
     "id": "postId",
     "timestamp": "date",                      
     "caption": "postText",                    
@@ -165,16 +159,26 @@ RENAME_MAP_INSTA_POSTS = {
     "likes_count": "reactions",                
     "comments_count": "comments",             
     
-    # Insights metrics parsed from /insights call loops
     "total_interactions": "engagements",       
     "saved": "saves",
     "shares": "shares",
-    "views": "impressions",                   # 🚀 SAFELY MAPS VIEWS -> IMPRESSIONS TO PROTECT YOUR HASHING KEY
+    "views": "impressions",                  
     "ig_reels_avg_watch_time": "avgWatchTimeMs",
     "ig_reels_video_view_total_time": "watchTimeMs"
 }
 
 def _meta_get(url: str, params: dict, retries: int = 3) -> dict:
+    """
+    Thin wrapper around the meta praph api. It allows for safe retrie
+
+    parameters:
+        url:        the url pertaining to the request
+        params:     the parameters the request should take
+        retries:    the amoount of times it is allowed to try to obtain a response again
+
+    output:
+        response:   returns a json of the response the api sends back  
+    """
     for attempt in range(retries):
         try:
             resp = requests.get(url, params=params, timeout=30)
@@ -189,6 +193,17 @@ def _meta_get(url: str, params: dict, retries: int = 3) -> dict:
 
 
 def instaExtraction(brand: tuple, engine: Engine) -> tuple:
+    """
+    This function extracts both account level and post level metrics for the instagram account of a brand.
+    
+    parameters:
+        brand:  a tuple containing the name of the brand as it is to be found on files and as it is found on the database
+        engine: a mysql connection
+
+    output:
+        MetricsDF:  A pandas dataframe containing the account level metrics
+        PostDF:     A pandas dataframe containing the post level metrics 
+    """
     brand_name = brand[1]
 
     if brand_name not in INSTA_ACCOUNTS:
@@ -309,7 +324,19 @@ def instaExtraction(brand: tuple, engine: Engine) -> tuple:
 
     return MetricsDF, PostsDF
 
-def _get_acc_id(brand: str, channel: str, engine: Engine):
+def _get_acc_id(brand: str, channel: str, engine: Engine) -> int:
+    """
+    Obtains the id for a social media account from the database/
+
+    parameters:
+        brand:      The name of the brand whose ID you'd like to receive
+        channel:    The name of the channel for the brand whose ID you'd like to receive
+        engine:     A sqlalchemy connection to the database
+
+    output:
+        id:         An integer that represents the brand and social media account combination in the database
+
+    """
     with engine.connect() as conn:
         idx = conn.execute(
             text(f"""
@@ -323,6 +350,19 @@ def _get_acc_id(brand: str, channel: str, engine: Engine):
         return idx 
 
 def linkedInExtraction(paths: list, brand: tuple, engine:Engine) -> tuple:
+    """
+    Extracts the data from the excel files produced by the different brands linkedin accounts
+
+    parameters:
+        paths:      A list of paths to different data files
+        brand:      A tuple containing the in path signifier for a certain brand and it's in database name
+        engine:     A sqlalchemy connection to the database
+
+    output:
+        MetricsData: A pandas dataframe containing all of the account level metrics for a certain brand's linkedin account
+        PostsDF:   A pandas  dataframe containing all posts and post level metrics for a certain brand's linkedin account
+
+    """
     total_data = []
     posts = False
     PostsDF = None
@@ -365,6 +405,18 @@ def linkedInExtraction(paths: list, brand: tuple, engine:Engine) -> tuple:
 
 
 def xExtraction(paths: list, brand:tuple, engine:Engine) -> tuple:
+    """
+    Extracts all possible information from the .csv files produced by linkedIn
+
+    parameters: 
+        paths:  A list of paths for diffferent data files
+        brand:  A tuple containing the in file signifier for a brand and their in database name 
+        engine: A sqlalchemy connection to the database
+
+    output:
+        MetricsDF:  A pandas dataframe with the account level metrics
+        PostsDF:    A pandas dataframe with the per post metrics
+    """
     metrics = False
     posts = False
 
@@ -396,3 +448,5 @@ def xExtraction(paths: list, brand:tuple, engine:Engine) -> tuple:
         PostsDF['date'] = pd.to_datetime(PostsDF['date'],format='%a, %b %d, %Y')
 
     return MetricsDF, PostsDF
+
+

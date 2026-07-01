@@ -34,6 +34,15 @@ INT_COLS = ["bookmarks","clicks","comments","engagements","followersGained","fol
 
 
 def _get_embedding(text:str) -> np.array:
+    """
+    Gets semantic embeddings for the text of a post
+
+    parameters:
+        text: the text of the post 
+    
+    outputs:
+        embeddings: an n-dimensional list of embeddings
+    """
 
     response = ollama.embeddings(
         model=EMBED_MODEL,
@@ -45,9 +54,13 @@ def _get_embedding(text:str) -> np.array:
 
 def _prepare_retrieval_data(df: pd.DataFrame):
     """
-    Precompute things we reuse often.
+    Precomputes things we reuse often. The function gets called once as the dataframe is passed
 
-    Call this ONCE after loading the dataframe.
+    parameters: 
+        df: a pandas dataframe containing the information for posts
+    
+    outputs:
+        retrieval data: A dictionary of posts and their embeddings sorted by account ID
     """
 
     retrieval_data = {}
@@ -66,13 +79,20 @@ def _prepare_retrieval_data(df: pd.DataFrame):
     return retrieval_data
 
 
-def _retrieve_similar_posts(
-    post_text,
-    source,
-    retrieval_data,
-    top_k=TOP_K
-):
+def _retrieve_similar_posts(post_text:str, source:str, retrieval_data:dict, top_k:int=TOP_K ) -> pd.DataFrame:
+    """
+    Gets posts with similar semantic embeddings
 
+    parameters: 
+        post_text:          The text of the post for which you want similar posts
+        source:             Where the post was extracted from 
+        retrieval_data:     A dictionary of posts and their embeddings         
+        top_k:              The amount of posts similar to the one being looked at that will be considered
+
+    output:
+        similar_posts:      A list of the k-most posts tat are the most similar to the one being observed 
+
+    """
     if source not in retrieval_data:
         return pd.DataFrame()
 
@@ -106,7 +126,16 @@ def _retrieve_similar_posts(
 
 
 def _dict_to_prompt(title, d):
+    """
+    Turns a dictionary of formats or pillars into a text element for a prompt
 
+    parameters:
+        title:  The title of what is contained in the dictionary
+        d:      A dictionary of formats or pillars and their respective id's
+    
+    output:
+        A text to be inserted in the prompt 
+    """
     rows = [
         f"{k} -> {v}"
         for k, v in d.items()
@@ -115,15 +144,17 @@ def _dict_to_prompt(title, d):
     return f"{title}:\n" + "\n".join(rows)
 
 
-def _classify_post(
-    post_text,
-    source,
-    retrieval_data,
-    formats,
-    content_pillars,
-    strategy_pillars
-):
+def _classify_post(post_text: str, source: str, retrieval_data: dict, formats: dict, content_pillars: dict, strategy_pillars: dict):
+    """
+    Uses a local LLM in order to assign categories to posts. More specifically formats, content pillars and strategy pillars
 
+    parameters:
+        post_text:          the text of the post that is to be classified
+        source:             the place social media account the post is coming from
+        retrieval_data:     the data separated by post
+        formats:            a dictionary of all formats and their id's
+        content_pillars:    a dictionary of content pillars 
+    """
     similar_posts = _retrieve_similar_posts(
         post_text,
         source,
@@ -368,8 +399,8 @@ def _get_top_terms(df):
 
 def transform_posts(dfs:list, engine: Engine) -> tuple:
     """
-    """
 
+    """
     FORMATS = pd.read_sql("SELECT * FROM Formats", engine, index_col='id').to_dict()["format"]
     CONTENT_PILLARS = pd.read_sql("SELECT * FROM ContentPillars", engine, index_col='id').to_dict()["pillar"]
     
@@ -450,6 +481,8 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
 
     terms = _get_top_terms(df)
 
+    terms = terms.replace({np.nan: None})
+
     terms['row_hash'] = add_row_hash(terms[['term','account_id']])['row_hash']
     terms['updated_at'] = datetime.now()
 
@@ -459,6 +492,8 @@ def transform_posts(dfs:list, engine: Engine) -> tuple:
 
 def transform_metrics(dfs:list, engine: Engine) -> pd.DataFrame:
     """
+    
+
     """
 
     df = pd.concat(dfs)
@@ -470,7 +505,8 @@ def transform_metrics(dfs:list, engine: Engine) -> pd.DataFrame:
         if col in df.columns:
             df[col] = (df[col]//1).astype("Int64")
 
-    
+    df = df.replace({np.nan: None})
+
     MetricsDF = _bend_to_sql_shape(df,'Metrics',engine)
 
     return MetricsDF

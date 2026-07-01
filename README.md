@@ -1,12 +1,14 @@
 # ETL and Database Migration
 
-This repository contains all necessary codes and files to accurately load and migrate from the old nurai/wexpand social media database into the new schema.
+This repository contains all the scripts needed to extract social media data from multiple sources, enrich it with embeddings and LLM-based classification, and load it into the Nurvai/Wexpand marketing database. It also handles one-time migration from the legacy schema to the current one.
+
+---
 
 ## Setup
 
-The recommended setup in order to use this repository is the following
+### Option A — Conda (recommended)
 
-```{bash}
+```bash
 conda create -n etl-env python=3.12
 conda activate etl-env
 
@@ -15,54 +17,78 @@ pip install -r requirements.txt
 curl -fsSL https://ollama.com/install.sh | sh
 
 ollama serve
-ollama pull your-embedding-model
-ollama pull your-llm
+ollama pull <your-embedding-model>   # recommended: nomic-embed-text
+ollama pull <your-llm-model>         # recommended: qwen2.5:7b
+
+sudo mysql -u your_user -p < CreateDatabase.sql
 ```
 
-Alternatively if you prefer venv
+### Option B — venv
 
-```{bash}
+```bash
 python3 -m venv etl-env
-source mkt-dash-env/bin/activate
+source etl-env/bin/activate
+
 pip install -r requirements.txt
 
 curl -fsSL https://ollama.com/install.sh | sh
 
 ollama serve
-ollama pull your-embedding-model
-ollama pull your-llm
+ollama pull <your-embedding-model>
+ollama pull <your-llm-model>
+
+sudo mysql -u your_user -p < CreateDatabase.sql
 ```
 
-Note that if you are running this on MacOs you need to run `ollama serve` in a separate terminal window and keep it running while running the codes. Additionally you need to setup a `.env` 
-file with the following information:
-```{}
-DATABASE_USER=your_user
-MYSQL_PASSWORD=your_password
-GMAIL_USER=your_gmail@gmail.com
-GMAIL_APP_PASSWORD=your_app_password
-NOTIFY_TO=mail_to_notify_to@domain.com
-GOOGLE_APPLICATION_CREDENTIALS=path_to_your_credentials
-IG_ACCESS_TOKEN=your_ig_access_token
-IG_USER_ID=your_ig_user_id
-EMBED_MODEL=your_embedding_model (recommended: nomic-embed-text)
-LLM_MODEL=your_llm?=_model (recommended: qwen2.5:7b)
+> **macOS note:** `ollama serve` must run in a separate terminal window and stay running for the duration of any ETL job.
+
+---
+
+## Environment Variables
+
+Create a `.env` file in the project root with the following keys:
+
+```env
+DATABASE_USER=your_db_user
+MYSQL_PASSWORD=your_db_password
+DATABASE_HOST=your_db_host
+GMAIL_USER=your_bot_gmail@gmail.com
+GMAIL_APP_PASSWORD=your_gmail_app_password
+NOTIFY_TO=recipient@domain.com
+GOOGLE_APPLICATION_CREDENTIALS=path/to/credentials.json
+IG_ACCESS_TOKEN=your_instagram_access_token
+IG_USER_ID=your_instagram_user_id
+EMBED_MODEL=nomic-embed-text
+LLM_MODEL=qwen2.5:7b
+DATA_PATH=relative/path/to/data
 ```
+
+---
+
+## Daily Data Sync
+
+The pipeline is designed to run autonomously. The only manual step each day is uploading the X (Twitter) and LinkedIn export files to the server:
+
+```bash
+cd /local/path/to/data
+scp -r *.* server_user@server_ip_or_domain:absolute/path/on/server
+```
+
+> **X export files:** the filename must contain the brand name or keyword in lowercase so the extractor can match them to the correct account (e.g. `wexpand_overview.csv`).
+
+If the database was previously set up in the legacy format, run `Migrate.py` once before anything else.
+
+---
 
 ## Scripts
 
-This repository contains the following scripts:
-
-- `extract.py`: extracts the data from the different sources
-- `transform.py`: adds embeddings to the posts data, obtains the key terms based on engagement for each of the brands
-- `load.py`: safely upserts the data into the sql schema
-- `Migrate.py`: migrates the data from the old schema into the new schema
-- `CreateDatabase.sql`: creates the *new* sql schema and fills the small tables with the preknown information
-- `Mailer.py`: handles the sending of alerts.
-- `main.py`: is the file to be run. It unites the logic of all the other files
-
-Now we'll continue with per file descriptions of what functions they contain and what it is they do.
-
-## Extract
-
-Extracts the data from the excel files, csv files and  (TBD) google analytics + meta api.  The file has the following functions
+| File | Purpose |
+|---|---|
+| `extract.py` | Pulls raw data from X CSV exports, LinkedIn Excel exports, and the Instagram Graph API |
+| `transform.py` | Generates embeddings, runs LLM-based post classification, computes UMAP projections, and extracts top engagement terms |
+| `load.py` | Safely upserts DataFrames into MySQL using timestamp-guarded `INSERT … ON DUPLICATE KEY UPDATE` |
+| `Migrate.py` | One-time migration from the old schema to the current one |
+| `CreateDatabase.sql` | Creates the new schema and seeds lookup tables |
+| `Mailer.py` | Sends alert emails via Gmail SMTP |
+| `main.py` | Entry point — orchestrates extract → transform → load |
 
